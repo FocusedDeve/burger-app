@@ -1,0 +1,36 @@
+import { useState } from "react";
+
+export default function LoginPage() {
+  // state (état, données)
+  const [inputValue, setInputValue] = useState("");
+
+  // comportements
+  const handleOnchange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Bonjour ${inputValue}`);
+    setInputValue("");
+  };
+
+  // affichage
+  return (
+    <div>
+      <h1>Bonjour chez nous !</h1>
+      <br />
+      <h1>Connectez-vous</h1>
+      <form action="submit" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          required
+          onChange={handleOnchange}
+          placeholder="Entrez votre prénom ..."
+          value={inputValue}
+        />
+        <button>Accéder à votre espace</button>
+      </form>
+    </div>
+  );
+}
