@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   // state (état, données)
@@ -12,8 +13,12 @@ export default function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Bonjour ${inputValue}`);
+    // alert(`Bonjour ${inputValue}`);
     setInputValue("");
+  };
+
+  const handleClick = () => {
+    console.log("afficher la page des commandes");
   };
 
   // affichage
@@ -30,7 +35,8 @@ export default function LoginForm() {
         placeholder="Entrez votre prénom ..."
         value={inputValue}
       />
-      <button>Accéder à votre espace</button>
+      <button onClick={handleClick}>Accéder à votre espace</button>
+      <Link to="/order">Order Page call</Link>
     </form>
   );
 }
