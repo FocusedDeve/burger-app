@@ -17,10 +17,6 @@ export default function LoginForm() {
     setInputValue("");
   };
 
-  const handleClick = () => {
-    console.log("afficher la page des commandes");
-  };
-
   // affichage
 
   return (
@@ -35,8 +31,9 @@ export default function LoginForm() {
         placeholder="Entrez votre prénom ..."
         value={inputValue}
       />
-      <button onClick={handleClick}>Accéder à votre espace</button>
-      <Link to="/order">Order Page call</Link>
+      <Link to="/order">
+        <button>Acceder à votre espace</button>
+      </Link>
     </form>
   );
 }
